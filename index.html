@@ -587,12 +587,12 @@ const produtos = [
     novo: false
   },
   {
-    nome: "Bloco de Notas Floral",
-    categoria: "presentes",
-    descricao: "Estampa exclusiva, 100 folhas, ótimo para presentes.",
+    nome: "Livro de Colorir com Água Minecraft",
+    categoria: "arte",
+    descricao: "Contém 1 livro com 4 ilustrações para colorir com água.",
     preco: 14.90,
     precoAntigo: null,
-    emoji: "🌸",
+    emoji: "fotos/lilcolorir.jpg",
     destaque: false,
     novo: true
   }
@@ -645,7 +645,9 @@ function renderizar() {
     return `
       <div class="card">
         <div class="card-img ${bg}">
-          <span>${p.emoji}</span>
+          ${p.imagem
+  ? `<img src="${p.imagem}" style="width:100%;height:160px;object-fit:cover;" />`
+  : `<span>${p.emoji}</span>`}
           ${badgeHtml}
         </div>
         <div class="card-body">
